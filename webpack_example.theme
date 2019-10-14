@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function webpack_example_page_attachments_alter(array &$attachments) {
+  // Use the dev library if we're developing locally.
+  if (in_array('webpack_example/main', $attachments['#attached']['library']) && file_exists(__DIR__ . '/dist_dev')) {
+    $index = array_search('webpack_example/main', $attachments['#attached']['library']);
+    $attachments['#attached']['library'][$index] = 'webpack_example/dev';
+  }
+}

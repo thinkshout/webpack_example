@@ -1,0 +1,7 @@
+name: Webpack example
+type: theme
+description: An example theme that uses Webpack
+package: Other
+core: 8.x
+libraries:
+  - webpack_example/main
