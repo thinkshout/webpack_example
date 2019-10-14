@@ -6,7 +6,8 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 module.exports = (env, argv) => {
   const isDevMode = argv.mode === "development";
   return {
-    devtool: isDevMode ? 'source-map' : false,
+    mode: isDevMode ? "development" : "production",
+    devtool: isDevMode ? "source-map" : false,
     entry: {
       main: ["./js/main.js", "./scss/main.scss"]
     },
@@ -65,9 +66,6 @@ module.exports = (env, argv) => {
         port: 3000,
         proxy: "http://drupal.localhost/"
       })
-    ],
-    optimization: {
-      usedExports: true
-    }
+    ]
   };
 };
