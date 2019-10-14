@@ -42,10 +42,6 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          include: path.resolve(__dirname, "js/utils.js"),
-          sideEffects: false
-        },
-        {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
           use: {
